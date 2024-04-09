@@ -1,0 +1,30 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/nadaraya-watson-trading-bot
+    username: postgres
+    password: 1111
+  flyway:
+    url: jdbc:postgresql://localhost:5432/nadaraya-watson-trading-bot
+    locations: classpath:db/migration
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        format_sql: true
+
+binance:
+  api:
+    key: "default"
+    secret: "default"
+    test:
+      key: "default"
+      secret: "default"
+
+order:
+  quantity: 0.001
+  stopLossCoefficient: 0.05
+  stopLimitPriceCoefficient: 0.06
